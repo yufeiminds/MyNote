@@ -1,6 +1,6 @@
 .. syntax-java:
 
-语法漫游之 - Java语法参考
+Java
 ================================
 
 基本类型
@@ -35,7 +35,7 @@
 分支选择
 ^^^^^^^^
 
-条件多路选择使用 ``else if`` ，支持 ``switch`` 
+条件多路选择使用 ``else if`` ，支持 ``switch``
 
 .. code-block:: java
 
@@ -53,7 +53,7 @@
 for
 
 .. code-block:: java
-    
+
     for (int i = 0; i < 10; i ++)
         statement
 
@@ -113,6 +113,64 @@ Java类是单继承，规避C++中多继承带来的问题。但一个类可以�
 
 例子
 ^^^^
+
+.. code-block:: bash
+
+    .
+    ├── Schedule.class
+    ├── Schedule.java
+    └── com
+        └── thxminds
+            ├── ScheduleInterface.class
+            └── ScheduleInterface.java
+
+.. code-block:: java
+
+    package com.thxminds;
+
+    public interface ScheduleInterface {
+        public void start();
+
+        public void cancel();
+
+        public void list();
+
+        public void list_job();
+    }
+
+
+.. code-block:: java
+
+    import com.thxminds.*;
+    import java.io.*;
+
+    public class Schedule implements ScheduleInterface {
+        public void start() {
+            System.out.println("Start");
+        }
+
+        public void cancel() {
+            System.out.println("Cancel");
+        }
+
+        public void list() {
+            System.out.println("List");
+        }
+
+        public void list_job() {
+            System.out.println("List Job");
+        }
+
+        public static void main(String[] args) {
+            Schedule schedule = new Schedule();
+            schedule.start();
+            schedule.cancel();
+            schedule.list();
+            schedule.list_job();
+        }
+    }
+
+
 
 数据结构
 --------
