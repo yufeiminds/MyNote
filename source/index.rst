@@ -20,6 +20,7 @@ Welcome to Yufei Li's Note!
 
    syntax-java
    syntax-swift
+   syntax-css
 
 
 Indices and tables
