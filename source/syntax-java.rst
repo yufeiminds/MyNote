@@ -68,6 +68,18 @@ while
         statement
     } while (bool) // true时退出
 
+增强型 For
+
+.. code-block:: java
+
+    int[] arr = int arr[10];
+
+    // ...
+
+    for (int i: arr) {
+        // i
+    }
+
 OOP
 ---
 
@@ -117,60 +129,72 @@ Java类是单继承，规避C++中多继承带来的问题。但一个类可以�
 .. code-block:: bash
 
     .
-    ├── Schedule.class
-    ├── Schedule.java
+    ├── CodeSnippets.class
+    ├── CodeSnippets.java
     └── com
         └── thxminds
-            ├── ScheduleInterface.class
-            └── ScheduleInterface.java
+            ├── MaxNumInterface.java
+            └── RectInterface.java
 
 .. code-block:: java
 
     package com.thxminds;
 
-    public interface ScheduleInterface {
-        public void start();
-
-        public void cancel();
-
-        public void list();
-
-        public void list_job();
+    public interface RectInterface {
+        public double area();
     }
-
 
 .. code-block:: java
 
     import com.thxminds.*;
     import java.io.*;
 
-    public class Schedule implements ScheduleInterface {
-        public void start() {
-            System.out.println("Start");
+    class Rect implements RectInterface {
+        double length;
+        double width;
+
+        Rect(double length, double width) {
+            this.length = length;
+            this.width = width;
         }
 
-        public void cancel() {
-            System.out.println("Cancel");
-        }
-
-        public void list() {
-            System.out.println("List");
-        }
-
-        public void list_job() {
-            System.out.println("List Job");
-        }
-
-        public static void main(String[] args) {
-            Schedule schedule = new Schedule();
-            schedule.start();
-            schedule.cancel();
-            schedule.list();
-            schedule.list_job();
+        public double area() {
+            return this.length * this.width;
         }
     }
 
+    class Cube extends Rect {
+        double height;
+        double rd = 1;
 
+        Cube(double length, double width, double height, double rd) {
+            super(length, width);
+            this.height = height;
+            this.rd = rd;
+        }
+
+        Cube(double length, double width, double height) {
+            super(length, width);
+            this.height = height;
+        }
+
+        public double volume() {
+            return this.area() * this.height;
+        }
+
+        public double weight() {
+            return this.volume() * this.rd;
+        }
+    }
+
+.. note:: 
+    *多态、覆盖、重载的区别*
+
+    多态是面向对象的一个重要特征，是指一个对象可以根据环境上下文确定自己的类型，相对它们在继承链中的位置，称之为向上转型或者向下转型。
+
+    覆盖是指子类实现直接重写其方法。
+
+    方法重载是指类方法可以接收多种不同参数，对不同的输入作出不同的响应。
 
 数据结构
 --------

@@ -49,7 +49,9 @@ Swift的基本概念， ``protocal`` 被称为 ``协议`` ，类似于Java中的
 
 .. code-block:: swift
 
-    extension Int {}
+    extension Int {
+    
+    }
 
 .. note:: 来自于 猫 仁波切 的博客
 
