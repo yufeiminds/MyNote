@@ -12,9 +12,10 @@ Welcome to Yufei Li's Note!
 上课或者自学时整理的一些笔记，以备查为主。
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
     net-service
+    stl
 
 编程语言漫游
 --------------

@@ -3,6 +3,17 @@
   {{ super() }}
   {% if theme_touch_icon %}
   <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
+  <script src="http://localhost/js/jquery.min.js"></script>
+    <script type="application/javascript>
+        $(document).ready( function() {
+            $('h3').each(function(i, data) {
+                console.log(i);    
+                console.log(data);    
+                var origin = $(this).text();
+                $(this).text(i + '. ' + origin);
+            });
+        });
+    </script>
   {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 {% endblock %}
